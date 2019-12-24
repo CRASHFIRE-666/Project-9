@@ -1,32 +1,63 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int d,m;
-    string date[20] {"первое","второе","третье","четвёртое","пятое",
-        "шестое","седьмое","восьмое","девятое","десятое",
-        "одиннадцатое","двенадцатое","тринадцатое",
-        "четырнадцатое","пятнадцатое","шестнадцатое","семнадцатое",
-        "восемнадцатое","девятнадцатое","двадцатое"};
-    string month[12] {"января","февраля","марта","апреля",
-        "мая","июня","июля","августа","сентября","октября","ноября","декабря"};
-    cin>>d>>m;
-    if (d<=20)
+    int d, m;
+    string l;
+    
+    cin >> d >> m;
+    
+    if (d >= 1 && d <= 31 && m >= 1 && m <= 12)
     {
-        cout<<date[d-1]<<" "<<month[m-1]<<endl;
+        switch (m)
+        {
+            case 1:
+                l = "Январь";
+                break;
+            case 2:
+                l = "Февраль";
+                break;
+            case 3:
+                l = "Март";
+                break;
+            case 4:
+                l = "Апрель";
+                break;
+            case 5:
+                l = "Май";
+                break;
+            case 6:
+                l = "Июнь";
+                break;
+            case 7:
+                l = "Июль";
+                break;
+            case 8:
+                l = "Авугст";
+                break;
+            case 9:
+                l = "Сентябрь";
+                break;
+            case 10:
+                l = "Октябрь";
+                break;
+            case 11:
+                l = "Ноябрь";
+                break;
+            case 12:
+                l = "Декабрь";
+                break;
     }
-    else if ((d<30)&&(d>20))
-    {
-        cout<<"двадцать "<<date[d-1]<<" "<<month[m-1]<<endl;
-    }
-    else if (d==30)
-    {
-        cout<<"тридцатое "<<month[m-1]<<endl;
+        cout << d << " " << l << endl;
     }
     else
     {
-        cout<<"тридцать "<<date[d-1]<<month[m-1]<<endl;
+        cout << "НЕВЕРНОЕ ЗНАЧЕНИЕ" << endl;
     }
+    
+    
+    
     return 0;
 }
