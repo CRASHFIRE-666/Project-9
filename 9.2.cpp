@@ -1,40 +1,31 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
-    setlocale(LC_ALL, "Russian" );
-    int k;
-    char n;
-    cout<<"Введите направление"<<endl;
-    cin>>n;
-    cout<<"Введите команду"<<endl;
-    cin>>k;
-    switch(k)
+    setlocale(LC_ALL, "Russian");
+    int n;
+    
+    cin >> n;
+    
+    if (n == 0)
     {
-        case -1: switch(n)
-        {
-            case 'N': cout<<"B"<<endl; break;
-            case 'E': cout<<"Ю"<<endl; break;
-            case 'S': cout<<"З"<<endl; break;
-            case 'W': cout<<"С"<<endl; break;
-        }
-            break;
-        case 1: switch(n)
-        {
-            case 'N': cout<<"З"<<endl; break;
-            case 'W': cout<<"Ю"<<endl; break;
-            case 'S': cout<<"В"<<endl; break;
-            case 'E': cout<<"С"<<endl; break;
-        }
-            break;
-        case 0: switch(n)
-        {
-            case 'N': cout<<"С"<<endl; break;
-            case 'W': cout<<"З"<<endl; break;
-            case 'S': cout<<"Ю"<<endl; break;
-            case 'E': cout<<"В"<<endl; break;
-        }
-            break;
+        cout << "Север" << endl;
     }
+    else if (n == 1)
+    {
+        cout << "Запад" << endl;
+    }
+    else if (n == -1)
+    {
+        cout << "Восток" << endl;
+    }
+    else
+    {
+        cout << "Неверное значение" << endl;
+    }
+    
+    
+    
     return 0;
 }
